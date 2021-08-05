@@ -115,3 +115,7 @@ if (result && result.length > 0) {
     result[0].address = 'Newvilla';
 }
 console.log("New Array after Updation: " + contactsArr);
+
+//To Delete the contact from the array
+contactsArr = contactsArr.filter((e) => e.firstname != 'Hope');
+console.log("New Array After Delete: " + contactsArr);
