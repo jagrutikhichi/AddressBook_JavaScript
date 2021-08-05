@@ -119,3 +119,7 @@ console.log("New Array after Updation: " + contactsArr);
 //To Delete the contact from the array
 contactsArr = contactsArr.filter((e) => e.firstname != 'Hope');
 console.log("New Array After Delete: " + contactsArr);
+
+//To find the Number of contacts in the array
+let numOfContacts = contactsArr.length;
+console.log("Number of Contacts in the AddressBook: " + numOfContacts);
