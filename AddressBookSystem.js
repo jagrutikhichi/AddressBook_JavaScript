@@ -20,7 +20,7 @@ class AddressBook {
     }
 
     get firstname() {
-        return this.firstname;
+        return this._firstname;
     }
     set firstname(firstname) {
         let pattern1 = RegExp('^[A-Z]{1}[a-z]{3,}$');
@@ -92,5 +92,7 @@ class AddressBook {
     }
 }
 
+let contactsArr = new Array();
 const addressBook = new AddressBook("Mark", "Wood", "Saintzeus", "Missouri", "California", "100245", "+01 5690125689", "mark.wood@orkut.com");
-console.log("AddressBook: " + addressBook.toString());
+contactsArr.push(addressBook.toString());
+console.log("AddressBook: " + contactsArr);
