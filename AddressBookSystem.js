@@ -19,14 +19,13 @@ class AddressBook {
         this.emailId = parameters[7];
     }
 
-    get firstname() {
-        return this._firstname;
-    }
+    get firstname() { return this._firstname; }
     set firstname(firstname) {
         let pattern1 = RegExp('^[A-Z]{1}[a-z]{3,}$');
         if (pattern1.test(firstname))
             this._firstname = firstname;
-        else throw 'FirstName is Incorrect';
+        else console.log('FirstName is Incorrect!');
+
     }
 
     get lastname() { return this._lastname; }
@@ -34,7 +33,7 @@ class AddressBook {
         let pattern2 = RegExp('^[A-Z]{1}[a-z]{3,}$');
         if (pattern2.test(lastname))
             this._lastname = lastname;
-        else throw 'LastName is Incorrect!';
+        else console.log('LastName is Incorrect!');
     }
 
     get address() { return this._address; }
@@ -42,7 +41,7 @@ class AddressBook {
         let pattern3 = RegExp('^[A-Z]{1}[a-z]{4,}$');
         if (pattern3.test(address))
             this._address = address;
-        else throw 'Address is Incorrect!';
+        else console.log('Address is Incorrect!');
     }
 
     get city() { return this._city; }
@@ -50,7 +49,7 @@ class AddressBook {
         let pattern4 = RegExp('^[A-Z]{1}[a-z]{4,}$');
         if (pattern4.test(city))
             this._city = city;
-        else throw 'City is Incorrect!';
+        else console.log('City is Incorrect!');
     }
 
     get state() { return this._state; }
@@ -58,7 +57,7 @@ class AddressBook {
         let pattern5 = RegExp('^[A-Z]{1}[a-z]{4,}$');
         if (pattern5.test(state))
             this._state = state;
-        else throw 'State is Incorrect!';
+        else console.log('State is Incorrect!');
     }
 
     get zipcode() { return this._zipcode; }
@@ -66,7 +65,7 @@ class AddressBook {
         let pattern6 = RegExp('^[1-9]{1}[0-9]{2}\\s{0,1}[0-9]{3}$');
         if (pattern6.test(zipcode))
             this._zipcode = zipcode;
-        else throw 'Zipcode is Incorrect!';
+        else console.log('Zipcode is Incorrect!');
     }
 
     get phoneNumber() { return this._phoneNumber; }
@@ -74,7 +73,7 @@ class AddressBook {
         let pattern7 = RegExp('^[+][0-9]{1,}\\s?[1-9]{1}[0-9]{9}$');
         if (pattern7.test(phoneNumber))
             this._phoneNumber = phoneNumber;
-        else throw 'PhoneNumber is Incorrect!';
+        else console.log('PhoneNumber is Incorrect!');
     }
 
     get emailId() { return this._emailId; }
@@ -82,7 +81,7 @@ class AddressBook {
         let pattern8 = RegExp('^[A-Z a-z 0-9]+([._+-][0-9 a-z A-Z]+)*@[0-9 a-z A-Z]+.[a-z A-Z]{2,3}([.][a-z A-Z]{2})*$');
         if (pattern8.test(emailId))
             this._emailId = emailId;
-        else throw 'EmailId is Incorrect!';
+        else console.log('EmailId is Incorrect!');
     }
 
     toString() {
@@ -93,6 +92,26 @@ class AddressBook {
 }
 
 let contactsArr = new Array();
-const addressBook = new AddressBook("Mark", "Wood", "Saintzeus", "Missouri", "California", "100245", "+01 5690125689", "mark.wood@orkut.com");
-contactsArr.push(addressBook.toString());
-console.log("AddressBook: " + contactsArr);
+const addressbook = new AddressBook("Mark", "Wood", "Saintzeus", "Kansas", "Missouri", "100245", "+01 5690125689", "mark.wood@orkut.com");
+contactsArr.push(addressbook);
+
+const addressbook2 = new AddressBook("Hope", "Launther", "Victorhall", "Frankfurt", "Kentucky", "100461", "+01 5213409871", "taylor.l@google.com");
+contactsArr.push(addressbook2);
+
+const addressbook3 = new AddressBook("Hope", "Tyson", "Crossmall", "Blueminton", "Indiana", "430016", "+81 7801456780", "hope.ty@gmail.com");
+contactsArr.push(addressbook3);
+
+console.log(contactsArr.length);
+for (var i = 0; i < contactsArr.length; i++) {
+    console.log(contactsArr[i]);
+}
+
+//To update the Entries in the array
+let result = contactsArr.filter((e) => e.firstname == 'Hope');
+console.log(result);
+
+if (result && result.length > 0) {
+    result[0].firstname = 'Taylor';
+    result[0].address = 'Newvilla';
+}
+console.log("New Array after Updation: " + contactsArr);
