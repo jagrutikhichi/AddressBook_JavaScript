@@ -178,3 +178,14 @@ function sortContactArray(firstname) {
 
 contactsArr.sort(sortContactArray("firstname"));
 console.log("After Sorting according to Firstname: " + contactsArr);
+
+//To sort the Array according to City, State, ZipCode
+
+contactsArr.sort(sortContactArray("city"));
+console.log("After Sorting according to City: " + contactsArr);
+
+contactsArr.sort(sortContactArray("state"));
+console.log("After Sorting according to State: " + contactsArr);
+
+contactsArr.sort(sortContactArray("zipcode"));
+console.log("After Sorting according to ZipCode: " + contactsArr);
