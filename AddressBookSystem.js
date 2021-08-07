@@ -139,3 +139,22 @@ console.log("Contact from the addressBook as per Given city: " + checkCity);
 
 let checkState = contactsArr.filter((e) => e.state == 'Kentucky');
 console.log("Contact from the addressBook as per given state: " + checkState);
+
+//Count the number of contacts for particular city or state
+
+const addressbook5 = new AddressBook("Jack", "Dosan", "Highpalace", "Kansas", "Kentucky", "890461", "+11 8901409871", "jack123@google.com");
+contactsArr.push(addressbook5);
+
+let counter = 0;
+for (let i = 0; i < contactsArr.length; i++) {
+    if (contactsArr[i].city == 'Kansas')
+        counter++;
+}
+console.log("Number of contacts for the given City in the AddressBook: " + counter);
+
+let counter1 = 0;
+for (let i = 0; i < contactsArr.length; i++) {
+    if (contactsArr[i].state == 'Missouri')
+        counter1++;
+}
+console.log("Number of contacts for the given State in the AddressBook: " + counter1);
