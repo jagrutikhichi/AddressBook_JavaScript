@@ -132,3 +132,10 @@ else
     console.log("Value already Exists!");
 
 console.log("Unique Array: " + contactsArr);
+
+// To check for the Person in the Address Book
+let checkCity = contactsArr.filter((e) => e.city == 'Kansas');
+console.log("Contact from the addressBook as per Given city: ", checkCity);
+
+let checkState = contactsArr.filter((e) => e.state == 'Kentucky');
+console.log("Contact from the addressBook as per given state: ", checkState);
